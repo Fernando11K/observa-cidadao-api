@@ -36,10 +36,9 @@ htmlcov/
 *.swo
 *~
 
-# Variáveis de ambiente / segredos
-.env
-.env.*
-!.env.example
+# Banco de dados local
+data/
+*.db
 
 # SO
 .DS_Store

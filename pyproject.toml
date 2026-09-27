@@ -1,20 +1,26 @@
 [project]
 name = "observa-cidadao-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "API GraphQL de transparência sobre senadores, com dados do Senado Federal e do TCU"
 readme = "README.md"
 authors = [
     { name = "fernando.mendonca", email = "fernandoferreira10@hotmail.com.br" }
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "aiosqlite>=0.22.1",
     "fastapi[standard]>=0.141.1",
+    "httpx>=0.28.1",
+    "pwdlib[argon2]>=0.3.1",
+    "pydantic-settings>=2.15.0",
+    "pyjwt>=2.15.0",
+    "sqlalchemy[asyncio]>=2.1.1",
     "strawberry-graphql[fastapi]>=0.327.7",
 ]
-
-[project.scripts]
-observa-cidadao-api = "observa_cidadao_api:main"
 
 [build-system]
 requires = ["uv_build>=0.12.13,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.fastapi]
+entrypoint = "observa_cidadao_api.main:app"
